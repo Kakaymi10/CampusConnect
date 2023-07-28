@@ -33,12 +33,6 @@ The project will deliver the following essential items:
 
 The project scope includes the design, development, and deployment of the website, excluding ongoing maintenance and support. The opportunities section may be considered a stretch goal.
 
-## Project Tasks and Timeline
-
-- Week 1: Proposal and idea generation
-- Weeks 2 - 6: Design and Development (Frontend and Backend)
-- Week 7: Testing, deployment, and launch
-
 ## Roles and Responsibilities
 
 - Daniel Burongu: Frontend Development
