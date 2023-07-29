@@ -31,7 +31,7 @@ The project will deliver the following essential items:
 
 ## Scope Boundaries
 
-The project scope includes the design, development, and deployment of the website, excluding ongoing maintenance and support. The opportunities section may be considered a stretch goal.
+The project scope includes the design, development, and deployment of the website. The opportunities section may be considered a stretch goal.
 
 ## Roles and Responsibilities
 
