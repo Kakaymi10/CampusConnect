@@ -1,0 +1,28 @@
+.about{
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    background-color: #5265c4;
+    color: white;
+    padding: 1em;
+    padding-bottom: 100px;
+}
+p{
+    color: white;
+    margin-top: 2em;
+    font-weight: 500;
+    font-size: 20px;
+}
+.about_title{
+    margin-top: 2em;
+    font-size: 40px;
+    margin-bottom: 2em;
+}
+.btn_abt{
+    background-color: white;
+    color: #5265c4;
+    margin-right: 2em;
+    margin-top: 2em;
+    height: 6vh;
+    width: 150px;
+}

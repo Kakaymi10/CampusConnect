@@ -1,0 +1,135 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .slider {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    z-index: -1;
+    overflow: hidden;
+    padding-bottom: 2em;
+
+  }
+  
+  .slides {
+    display: flex;
+    
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    
+    
+    
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    /*
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+    */
+  }
+  .slides::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+  }
+  .slides::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+  .slides::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: 60vh;
+    margin-bottom: .1em;
+    margin-right: 50px;
+    border-radius: 10px;
+    background: white;
+    border: 3px solid #5265c4;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    padding: .2em;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+  }
+  .slides > div:target {
+  /*   transform: scale(0.8); */
+  }
+  .author-info {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+  }
+  .author-info a {
+    color: white;
+  }
+
+  
+  .slider > a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+  }
+  .slider > a:active {
+    top: 1px;
+  }
+  .slider > a:focus {
+    background: #000;
+  }
+  
+  /* Don't need button navigation */
+.card_description{
+  color: #5265c4;
+  font-size: 18px;
+}
+.card_title{
+  color: #5265c4;
+  box-shadow: 2px 1px 1px 1px  #5265c4;
+}
+.card_title1{
+  color: #5265c4;
+  font-size: 40px;
+}
+.btn_slider{
+  width: 200px;
+  height: 7vh;
+  margin-left: 1em;
+  background-color: #5265c4;
+  color: white;
+  border: none;
+  font-size: 17px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: .3s;
+}
+.btn_slider:hover{
+  background-color: white;
+  color: #5265c4;
+  border: #5265c4 2px solid;
+  padding-right: 2em;
+
+}

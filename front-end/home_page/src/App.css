@@ -1,0 +1,25 @@
+html{
+  scroll-behavior: smooth;
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.App {
+  background: white;
+  height: 100vh;
+}
+.footer{
+  margin: 0 auto;
+  text-align: center;
+  background-color: #5265c4;
+}
+.content_footer{
+  font-size: small;
+  padding-top: 7em;
+  padding-bottom: 1em;
+}

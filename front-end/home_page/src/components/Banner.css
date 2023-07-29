@@ -1,0 +1,55 @@
+.main_ban{
+    padding-top: 7em;
+    max-width: 1300px;
+    background-color: white;
+    display: flex;
+    margin: 0 auto;
+    color: #3b4da7;
+}
+h1{
+    font-size: 30px;
+
+    margin-top: 5vh;
+    margin-bottom: 4vh;
+}
+h2{
+    font-size: 20px;
+    font-weight: 300;
+}
+.ban1 {
+    width: 70%;
+}
+
+.ban_img{
+    margin-top: 5vh;
+    width: 100%;
+}
+h2{
+    margin-bottom: 0.2em;
+}
+p{
+
+    font-weight: 900;
+    color:  #273b9f;
+
+}
+.btn{
+    margin-top: 2em;
+}
+.btn_bnr{
+    width: 13em;
+    height: 7vh;
+    margin-right: 1em;
+    margin-bottom: 2em;
+}
+@media (max-width: 700px) {
+    .btn_bnr{
+        display: block;
+    }
+    .main_ban{
+        display: flex;
+        flex-direction: column;
+        padding-top: 6em;
+    }
+
+}
