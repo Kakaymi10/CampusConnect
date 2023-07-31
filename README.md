@@ -33,14 +33,14 @@ The project will deliver the following essential items:
 
 The project scope includes the design, development, and deployment of the website. The opportunities section may be considered a stretch goal.
 
-## Roles and Responsibilities
+## Team members
 
-- Daniel Burongu: Frontend Development
-- Mourice Onyonyi: Database Management
-- Moussa Moustpha: Project Manager and FullStack
-- David Mazimpaka: Backend Development
-- Long Maker Long Deng: Testing and Quality Assurance
-- Erica Nshimirimana: Deployment and Launch (DevOps)
+- Daniel Burongu
+- Mourice Onyonyi
+- Moussa Moustpha
+- David Mazimpaka
+- Long Maker Long Deng
+- Erica Nshimirimana
 
 ---
 
