@@ -19,8 +19,8 @@ import {getAuth, GoogleAuthProvider} from "firebase/auth"
 const firebaseConfig = {
     // Your Firebase app configuration options
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: "alu-hackathon.firebaseapp.com",
-    databaseURL: "aluplanner-kakaymi10.vercel.app",
+    authDomain: "aluplanner-kakaymi10.vercel.app",
+    databaseURL: "https://alu-hackathon-default-rtdb.firebaseio.com",
     projectId: "alu-hackathon",
     storageBucket: "alu-hackathon.appspot.com",
     messagingSenderId: "903657003269",

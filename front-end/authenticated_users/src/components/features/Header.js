@@ -4,7 +4,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import Home from "./Home";
 
-import Event from "./Event";
+
 
 import "./Header.css";
 import "./Home.css";
@@ -15,7 +15,10 @@ import { Acad } from "./Acad";
 
 ////Testing firebse
 
-
+//<Link to="./Event" className="a" onClick={handleLinkClick}>
+//Events
+//</Link>
+//<Route path="/event" element={<Event />} />
 
 
 
@@ -46,9 +49,7 @@ function Header(props) {
             <Link to="/" className="a" onClick={handleLinkClick}>
               Home
             </Link>
-            <Link to="./Event" className="a" onClick={handleLinkClick}>
-              Events
-            </Link>
+            
             <Link to="/Campustoday" className="a" onClick={handleLinkClick}>
               Campus today
             </Link>
@@ -95,7 +96,7 @@ function Header(props) {
         
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/event" element={<Event />} />
+          
           <Route path="/Campustoday" element={<Campustoday />} />
           <Route path="/Acad" element={<Acad />} />
         </Routes>
