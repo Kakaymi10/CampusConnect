@@ -46,7 +46,7 @@ export default function CardSlider(){
       </div>
 
       <div className="btn">
-        <button className="btn_slider">Connect</button>
+        <button className="btn_slider">Login/Sign Up</button>
       </div>
     </div>
 

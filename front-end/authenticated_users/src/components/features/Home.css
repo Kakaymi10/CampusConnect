@@ -1,0 +1,17 @@
+.banner{
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: #5265c4 4px solid;
+    color: #5265c4;
+    text-align: left;
+    padding: 2em;
+    padding-top: 20vh;
+}
+.home_img{
+    width: 70%;
+    border-radius: 4em;
+}
+
+.home_title{
+    font-size: 3em;
+}

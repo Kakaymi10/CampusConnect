@@ -1,0 +1,48 @@
+.cards_img{
+    width: 30vw;
+    height: 35vh;
+    object-fit: cover;
+    border-radius: 1em;
+  }
+
+  .cards {
+    position: relative;
+    display: flex;
+    column-gap: 0;
+    gap: 0;
+    text-align: start;
+    object-fit: conver;
+    border: #273b9f 2px solid;
+    background-color:#273b9f ;
+    color:  white;
+ 
+    margin-top: 3em;
+    padding: .5em;
+    border-radius: 5px;
+  }
+
+  .cards >* {
+    margin: 4px;
+  }
+  .card--badge{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background-color: #273b9f;
+    padding: 5px 7px;
+    border-radius: 2px;
+    font-weight: bold;
+  }
+
+  .description{
+    display: inline;
+    width: 30vw;
+  }
+  .descrip{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .form{
+    color: yellow;
+  }

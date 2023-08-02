@@ -1,0 +1,7 @@
+.cards_main{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  gap: 2em;
+  margin-left: 1em;
+}
