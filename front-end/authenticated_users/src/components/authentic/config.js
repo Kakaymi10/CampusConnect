@@ -8,7 +8,7 @@ import {getAuth, GoogleAuthProvider} from "firebase/auth"
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 /*const firebaseConfig = {
-  apiKey: "",
+  apiKey: "AIzaSyDr2uOjJAZToTpbhLhRA4mi2WZnOpW9pwg",
   authDomain: "campusconnect-f66bb.firebaseapp.com",
   projectId: "campusconnect-f66bb",
   storageBucket: "campusconnect-f66bb.appspot.com",
@@ -19,7 +19,7 @@ import {getAuth, GoogleAuthProvider} from "firebase/auth"
 const firebaseConfig = {
     // Your Firebase app configuration options
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: "aluplanner-kakaymi10.vercel.app",
+    authDomain: "alu-hackathon.firebaseapp.com",
     databaseURL: "https://alu-hackathon-default-rtdb.firebaseio.com",
     projectId: "alu-hackathon",
     storageBucket: "alu-hackathon.appspot.com",
