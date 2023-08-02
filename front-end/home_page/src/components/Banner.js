@@ -1,6 +1,6 @@
 import React from "react";
 import "./Banner.css";
-import banner from './../assets/banner_img.jpg'
+import banner from './../assets/banner2.jpg'
 
 export default function Banner(){
     const text = 'Seamlessly navigate campus life, your all-in-one platform for events, updates, and student engagement.';
