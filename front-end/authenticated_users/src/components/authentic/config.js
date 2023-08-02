@@ -18,7 +18,7 @@ import {getAuth, GoogleAuthProvider} from "firebase/auth"
 };*/
 const firebaseConfig = {
     // Your Firebase app configuration options
-    apiKey: "AIzaSyDbloeJNjdhU840mPSdQiYaIJkKWCMKOI4",
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: "alu-hackathon.firebaseapp.com",
     databaseURL: "https://alu-hackathon-default-rtdb.firebaseio.com",
     projectId: "alu-hackathon",
