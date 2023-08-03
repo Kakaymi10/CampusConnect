@@ -74,14 +74,32 @@
     transform: translateY(-10px);
     cursor: pointer;
 }
+/* media queries */
+@media(max-width: 1200px){
+    .team-content{
+        grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+    }
+}
 
 @media(max-width: 768px){
     .team{
-        width: 100%;
         height: auto;
         padding: 90px 2%;
     }
     .center h1{
         font-size: 3.2rem;
+    }
+    .team-content {
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+    .box {
+        padding: 12px;
+    }
+    .box h3 {
+        font-size: 20px;
+    }
+    .box h5 {
+        font-size: 12px;
     }
 }
