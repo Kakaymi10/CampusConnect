@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The CampusConnect project aims to improve student engagement and make university events more accessible within the African Leadership University (ALU) community. To tackle these challenges, we are creating a user-friendly web application called CampusConnect, designed specifically for ALU students. The application will provide real-time updates on events and simplify access to event details, such as eligibility criteria and registration information. CampusConnect aims to foster a sense of community and active participation, targeting the diverse student body at ALU. The anticipated outcomes include increased student engagement, enhanced event participation, and a stronger sense of community.
+Th CampusConnect project aims to improve student engagement and make university events more accessible within the African Leadership University (ALU) community. To tackle these challenges, we are creating a user-friendly web application called CampusConnect, designed specifically for ALU students. The application will provide real-time updates on events and simplify access to event details, such as eligibility criteria and registration information. CampusConnect aims to foster a sense of community and active participation, targeting the diverse student body at ALU. The anticipated outcomes include increased student engagement, enhanced event participation, and a stronger sense of community.
 
 ## Project Goals and Objectives
 
