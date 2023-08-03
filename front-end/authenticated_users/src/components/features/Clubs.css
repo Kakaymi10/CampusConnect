@@ -1,0 +1,56 @@
+.acad{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 2em;
+    padding-top: 7em;
+    color: red;
+}
+.dead{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: #273b9f 2px solid;
+    gap: 1em;
+    margin: .5em;
+    border-radius: 5px;
+    transition: 0.3s;
+    
+
+}
+.dead:hover{
+    transform: scale(1.03); 
+}
+.club_img{
+    width: 250px;
+    border: #273b9f 2px solid;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.club_img:hover{
+    transform: scale(1.03);
+}
+.mail-icon{
+    font-size: 30px;
+    transition: 0.3s;
+}
+.mail-icon:hover{
+    transform: scale(1.1)
+
+}
+.insta-icon{
+    font-size: 30px;
+    color: red;
+    margin-left: 1em;
+    transition: 0.3s;
+}
+.insta-icon:hover{
+    transform: scale(1.1)
+}
+@media (max-width: 700px){
+    .dead{
+        display: flex;
+        flex-direction: column;
+    }
+}

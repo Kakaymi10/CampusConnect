@@ -10,7 +10,7 @@ import "./Header.css";
 import "./Home.css";
 import "./../../App.css";
 import Campustoday from "./Campustoday";
-import { Acad } from "./Acad";
+import { Clubs } from "./Clubs";
 
 
 ////Testing firebse
@@ -53,11 +53,11 @@ function Header(props) {
             <Link to="/Campustoday" className="a" onClick={handleLinkClick}>
               Campus today
             </Link>
-            <Link to="/Acad" className="a" onClick={handleLinkClick}>
-              Acad Deadlines
+            <Link to="/Clubs" className="a" onClick={handleLinkClick}>
+              Clubs
             </Link>
             <Link to="/acad-sessions" className="a" onClick={handleLinkClick}>
-              Acad Sessions
+              Share opportunities
             </Link>
             
           </div>
@@ -98,7 +98,7 @@ function Header(props) {
           <Route path="/" element={<Home />} />
           
           <Route path="/Campustoday" element={<Campustoday />} />
-          <Route path="/Acad" element={<Acad />} />
+          <Route path="/Clubs" element={<Clubs />} />
         </Routes>
       </div>
     </BrowserRouter>
