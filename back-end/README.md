@@ -11,8 +11,8 @@ CampusConnect is a user-friendly web application explicitly designed for ALU stu
 The backend of CampusConnect is built using the following technologies:
 
 - Programming Language: Python
-- Web Framework: Django or Flask
-- Database: MySQL or SQLite or Firebase
+- Web Framework: Django
+- Database: MySQL/SQLite or Firebase
 
 ## Features
 
