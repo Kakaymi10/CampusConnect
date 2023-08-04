@@ -31,10 +31,18 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    # Add other origins as needed
+]
+
+# Optional: Allow credentials (cookies, authorization headers) to be included in the CORS request
+CORS_ALLOW_CREDENTIALS = True
 
 INSTALLED_APPS = [
     'club',
     'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'campusconnect.urls'
