@@ -10,7 +10,7 @@
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #4f74c4;
             border-radius: 5px;
         }
         input[type="text"],
@@ -19,12 +19,12 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #4d98db;
             border-radius: 4px;
         }
         button {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #4c95af;
+            color: rgb(73, 118, 163);
             padding: 10px 15px;
             border: none;
             border-radius: 4px;
@@ -69,4 +69,3 @@
     </script>
 </body>
 </html>
-
