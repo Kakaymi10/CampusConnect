@@ -65,6 +65,7 @@
             console.log('Name:', name);
             console.log('Email:', email);
             console.log('Password:', password);
+            });
     </script>
 </body>
 </html>
