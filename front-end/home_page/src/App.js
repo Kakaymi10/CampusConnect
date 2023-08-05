@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Banner from './components/Banner';
 import About from './components/About';
 import CardSlider from './components/CardSlider';
+import Team from './components/Team';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -24,6 +25,9 @@ function App() {
       </div>
       <section data-aos="fade-down">
       <CardSlider/>
+      </section>
+      <section data-aos="fade-down">
+      <Team/>
       </section>
 
 

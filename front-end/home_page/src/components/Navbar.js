@@ -23,6 +23,7 @@ const Navbar = () => {
         <a href="#Banner" onClick={handleLinkClick}>Home</a>
         <a href="#About" onClick={handleLinkClick}>About</a>
         <a href="#CardSlider" onClick={handleLinkClick}>Service</a>
+        <a href="#Team" onClick={handleLinkClick}>Team members</a>
   
       </div>
       <button className="try_out">Login/Sign Up</button>
