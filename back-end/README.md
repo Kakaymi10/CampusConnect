@@ -2,7 +2,7 @@
 
 Welcome to the CampusConnect Backend Repository! This repository contains the backend code for the CampusConnect web application, designed to improve student engagement and event accessibility within the African Leadership University (ALU) community.
 
-## Introduction
+## Introduction.
 
 CampusConnect is a user-friendly web application explicitly designed for ALU students. The backend of CampusConnect is responsible for handling data, managing event information, user registrations, and interactions with the database.
 
