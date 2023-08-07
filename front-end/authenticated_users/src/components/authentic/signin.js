@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { auth, provider } from "./config";
+import { useFirebase } from "./config";
 import { signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 //import Routerauth from "./authRoutes";
 import Header from "../features/Header";
@@ -8,7 +8,7 @@ import Login from "./login";
 function SignIn() {
   const [user, setUser] = useState(null);
   const [login, setLogin] = useState(true)
-
+  const { auth } = useFirebase();
   const handleSwitch = () =>{
     setLogin(!login)
   }
