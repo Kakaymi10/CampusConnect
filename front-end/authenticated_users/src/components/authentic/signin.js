@@ -4,7 +4,6 @@ import { signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEma
 //import Routerauth from "./authRoutes";
 import Header from "../features/Header";
 import Login from "./login";
-import { storeAuthToken } from "./AuthUtils";
 
 function SignIn() {
   const [user, setUser] = useState(null);
@@ -23,7 +22,7 @@ function SignIn() {
     signInWithEmailAndPassword(auth, email, password).then(data => {
       console.log(data)
       setUser(data.user.email)
-      storeAuthToken(data.user.accessToken);
+      console.log(user)
     }).catch(err =>{
       alert('Invalid email or password. Please try again.');
     })
