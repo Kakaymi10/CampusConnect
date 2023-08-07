@@ -1,11 +1,101 @@
 import React, { useEffect, useState } from "react";
 import { auth, provider } from "./config";
-import { signInWithPopup, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+//import Routerauth from "./authRoutes";
 import Header from "../features/Header";
-import "./login.css";
+import Login from "./login";
 
 function SignIn() {
-    const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
+  const [login, setLogin] = useState(true)
+
+  const handleSwitch = () =>{
+    setLogin(!login)
+  }
+
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const email = event.target.elements.email.value;
+    const password = event.target.elements.password.value;
+
+    signInWithEmailAndPassword(auth, email, password).then(data => {
+      console.log(data)
+      setUser(data.user.email)
+      console.log(user)
+    }).catch(err =>{
+      alert('Invalid email or password. Please try again.');
+    })
+  }
+  const handleSignup = async (event) => {
+    event.preventDefault();
+    const email = event.target.elements.email.value;
+    const password = event.target.elements.password.value;
+
+    createUserWithEmailAndPassword(auth, email, password).then(data => {
+      console.log(data, "authData")
+      setUser(data.user.email)
+    }).catch(err =>{
+      alert('User in use. Please use another email or login');
+    })
+  }
+  const handleSignout = async () => {
+    
+    signOut(auth).then(data => {
+      console.log(data, "authData")
+      setLogin(true)
+      setUser(null)
+    })
+  }
+   
+      // If the login fails, handle the error and display an alert
+    
+    
+  /*const handleSubmit = (e) =>{
+    e.preventDefault()
+    const email = e.target.email.value
+    const password = e.target.password.value
+    createUserWithEmailAndPassword(auth, email, password).then(data =>{
+      console.log(data, "authData")
+      setUser(data.user.email)
+      console.log(data.user.email)
+    })
+  }
+  <h1>Sign In</h1>
+              <form onSubmit={(e)=>handleSubmit(e)}>
+                <input name="email" placeholder="Email" /><br/>
+                <input name="password" placeholder="Password" type="password" /><br></br>
+                <button>SignIn</button>  
+              </form>*/
+  
+    return(
+        <div>
+          {user ? (
+            <div>
+              <Header
+                email={user}
+                logout={handleSignout}
+                
+                />
+
+            </div>
+            ) : (
+              <Login 
+                submitted= {login ? handleLogin : handleSignup}
+                title={login ? 'Login' : 'Sign Up'}
+                forgot={login ? 'Forgot password?' : ''}
+                submit={login ? 'Login' : 'Sign Up'}
+                lab_not_member={login ? 'Not a memeber?' : 'Have an account?'}
+                not_member={login ? 'Sign Up' : 'Login'}
+                switch = {handleSwitch}
+                
+              />
+          )
+          }
+        </div>
+        
+    )
+    /*const [user, setUser] = useState(null);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -75,7 +165,7 @@ function SignIn() {
                 </div>
             ) : (
                 <div className="big_sign_block">
-                <h1 className="signin_title">Effortless Access: Seamlessly Connect as an Existing User or New Member</h1>
+                <h1 className="signin_title">Effortlessly Access: Seamlessly Connect as an Existing User or New Member</h1>
                 <div className="signin_block">
                     <div >
                         <input className="input_sect" type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
@@ -115,8 +205,7 @@ function SignIn() {
                 </div>
             )}
         </div>
-    );
+    );*/
 }
 
-export default SignIn;
-
+export default SignIn

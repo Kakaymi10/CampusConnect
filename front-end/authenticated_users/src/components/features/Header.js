@@ -10,7 +10,7 @@ import "./Header.css";
 import "./Home.css";
 import "./../../App.css";
 import Campustoday from "./Campustoday";
-import { Clubs } from "./Clubs";
+import Clubsfilled from "./clubsdata/clubsfilled";
 
 
 ////Testing firebse
@@ -44,7 +44,7 @@ function Header(props) {
       <div className="Navbar">
         <div className="Head">
           
-        <span className="nav-logo">campus<span className="connect">Connect</span></span>
+        <span className="nav-logo">Campus<span className="connect">Connect</span></span>
           <div className={`nav-items ${isOpen && "open"}`}>
             <Link to="/" className="a" onClick={handleLinkClick}>
               Home
@@ -98,7 +98,7 @@ function Header(props) {
           <Route path="/" element={<Home />} />
           
           <Route path="/Campustoday" element={<Campustoday />} />
-          <Route path="/Clubs" element={<Clubs />} />
+          <Route path="/Clubs" element={<Clubsfilled />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -3,23 +3,33 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding: 2em;
-    padding-top: 7em;
+    margin: 0 auto;
     color: red;
 }
 .dead{
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: #273b9f 2px solid;
-    gap: 1em;
-    margin: .5em;
+    gap: 0em;
+    margin: 0;
+    margin-bottom: 1em;
     border-radius: 5px;
     transition: 0.3s;
+    width: 90%;
+    padding-right: 6px;
+
     
 
 }
 .dead:hover{
     transform: scale(1.03); 
+    background-color: #ccc;
+}
+.image-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 .club_img{
     width: 250px;
@@ -27,7 +37,9 @@
     border-radius: 5px;
     transition: 0.3s;
     cursor: pointer;
+    margin-bottom: 1em;
 }
+
 .club_img:hover{
     transform: scale(1.03);
 }
@@ -47,6 +59,30 @@
 }
 .insta-icon:hover{
     transform: scale(1.1)
+}
+.club-desc{
+    color: #273b9f;
+}
+.contact{
+    color: #273b9f;
+}
+.club-title{
+    color: #273b9f;
+}
+.join-button{
+    border: none;
+    background-color: #273b9f;
+    color: white;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+.join-button:hover{
+    border: 2px solid #273b9f;
+    background-color: white;
+    color: #273b9f;
 }
 @media (max-width: 700px){
     .dead{
