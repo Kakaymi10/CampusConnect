@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     
     <div className="Navbar">
-      <span className="nav-logo">campus<span className="connect">Connect</span></span>
+      <span className="nav-logo">Campus<span className="connect">Connect</span></span>
       <div className={`nav-items ${isOpen && "open"}`}>
         <a href="#Banner" onClick={handleLinkClick}>Home</a>
         <a href="#About" onClick={handleLinkClick}>About</a>
