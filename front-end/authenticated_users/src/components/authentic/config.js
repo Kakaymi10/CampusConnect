@@ -1,5 +1,4 @@
 // Import the functions you need from the SDKs you need
-import { createContext, useContext, useEffect, useState } from 'react';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getAuth, GoogleAuthProvider} from "firebase/auth"
@@ -35,30 +34,4 @@ const analytics = getAnalytics(app);
 
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
-
-
-const FirebaseContext = createContext(null);
-
-export const useFirebase = () => useContext(FirebaseContext);
-
-export function FirebaseProvider({ children }) {
-  const [authInitialized, setAuthInitialized] = useState(false);
-
-  useEffect(() => {
-    // Initialize Firebase authentication persistence
-    auth.setPersistence(getAuth(app), auth.Auth.Persistence.LOCAL)
-      .then(() => {
-        setAuthInitialized(true);
-      })
-      .catch((error) => {
-        console.error("Error setting persistence:", error);
-        setAuthInitialized(true); // Continue initialization even on error
-      });
-  }, []);
-
-  return (
-    <FirebaseContext.Provider value={{ app, auth, provider }}>
-      {authInitialized ? children : <div>Loading...</div>}
-    </FirebaseContext.Provider>
-  );
-}
+export {app, auth, provider}
