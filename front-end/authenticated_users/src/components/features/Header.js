@@ -11,7 +11,7 @@ import "./Home.css";
 import "./../../App.css";
 import Campustoday from "./Campustoday";
 import Clubsfilled from "./clubsdata/clubsfilled";
-import Section from "./bothOppor";
+import FormComponent from "./opportunities";
 
 
 ////Testing firebse
@@ -100,7 +100,7 @@ function Header(props) {
           
           <Route path="/Campustoday" element={<Campustoday />} />
           <Route path="/Clubs" element={<Clubsfilled />} />
-          <Route path="/opportunities" element={<Section />} />
+          <Route path="/opportunities" element={<FormComponent/>} />
         </Routes>
       </div>
     </BrowserRouter>
