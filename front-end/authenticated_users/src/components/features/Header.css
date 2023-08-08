@@ -104,6 +104,9 @@
   .signOut_button:hover{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+  .all_share_block{
+    padding-top: 5em;
+  }
 
   @media (max-width: 700px) {
     

@@ -9,7 +9,9 @@
 .dead{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: #273b9f 2px solid;
+    border: #ccc 2px solid;
+    padding-top: 1em;
+    padding-bottom: 1em;
     gap: 0em;
     margin: 0;
     margin-bottom: 1em;
@@ -17,13 +19,13 @@
     transition: 0.3s;
     width: 90%;
     padding-right: 6px;
-
+    max-width: 1000px;
     
 
 }
 .dead:hover{
     transform: scale(1.03); 
-    background-color: #ccc;
+    background-color: #f0f0f0;
 }
 .image-title{
     display: flex;
@@ -68,22 +70,52 @@
 }
 .club-title{
     color: #273b9f;
+    margin-bottom: 0.5em;
 }
 .join-button{
     border: none;
-    background-color: #273b9f;
-    color: white;
+    background-color: white;
+    color: #273b9f;
     cursor: pointer;
     width: 100px;
     height: 30px;
     border-radius: 50px;
     transition: 0.4s;
+    border: 1px solid #273b9f;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 .join-button:hover{
-    border: 2px solid #273b9f;
-    background-color: white;
-    color: #273b9f;
+    border: none;
+    background-color: #273b9f;
+    color: white;
 }
+
+
+.view-more {
+    display: block;
+    margin-top: 8px;
+    margin-left: 2em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: red;
+  }
+  .truncate{
+    color: #273b9f;
+  }
+  .custom-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    min-width: 350px;
+    padding: 20px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+  }
+  
 @media (max-width: 700px){
     .dead{
         display: flex;
