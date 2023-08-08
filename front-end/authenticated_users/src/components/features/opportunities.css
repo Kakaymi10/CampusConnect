@@ -1,10 +1,41 @@
 .oppo_main{
-    padding: 7em;
-    position: fixed;
+    padding-top: 7em;
+    
 }
 
 .share_block{
     margin-top: 2em;
     padding-bottom: 1em;
 }
+.share-opp{
+    display: flex;
+    align-items: center;
+    border: 1px solid #5265c4;
+    color: #5265c4;
+    background-color: white;
+    border-radius: 10px;
+    height: 4vh;
+    cursor: pointer;
+    padding: 4px;
+    transition: 0.4s;
+}
+.share-opp:hover{
+    background-color: #5265c4;
+    color: white;
 
+}
+.share-head{
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #f2f0f0;
+    color: #5265c4;
+    height: 8vh;
+    border-radius: 5px 5px 0px 0;
+}
+#none{
+    display: none;
+}

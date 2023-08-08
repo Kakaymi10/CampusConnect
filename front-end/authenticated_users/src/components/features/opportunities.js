@@ -5,13 +5,13 @@ import { getDatabase, ref, push } from 'firebase/database';
 import Modal from "react-modal";
 import "./opportunities.css"
 import './../authentic/login.css'
-
-
+import { FaPlus } from 'react-icons/fa'
+import OpportunitiesContent from './opportunityContent';
 
 const FormComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);  
   const [formData, setFormData] = useState({
-    image: 'default-image-url', // Default image URL
+    image: 'https://thumbs.dreamstime.com/z/internship-learnin…er-preparation-concept-working-85688117.jpg?w=992', // Default image URL
     title: '',
     deadline: '',
     description: '',
@@ -45,8 +45,9 @@ const FormComponent = () => {
   };
   return (
     <div className='oppo_main'> 
-      <div>
-        <button onClick={openModal}>Share opportunities</button>
+      <div className='share-head'>
+        <h4 >Opportunities Hub</h4>
+        <button className='share-opp' onClick={openModal}><FaPlus />Post</button>
       </div>
       <Modal
         isOpen={isModalOpen}
@@ -87,6 +88,7 @@ const FormComponent = () => {
       </form>
       </div>
       </Modal>
+      <OpportunitiesContent />
     </div>
   );
 };

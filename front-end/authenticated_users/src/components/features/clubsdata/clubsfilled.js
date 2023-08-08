@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Clubs } from "../Clubs";
-
+import robotics_club from './../assets/robotics_club.jpg'
 function Clubsfilled() {
   const [data, setData] = useState([]);
 
@@ -28,9 +28,15 @@ function Clubsfilled() {
         <div>
           {data.map((item) => (
             <Clubs
+             desc_title ="Club's Mission"
               key={item.id}
               title={item.name}
               description={item.description}
+              join = 'Join Club'
+              contact = 'Contacts'
+              email = {item.email}
+              intagram = {item.instagram_link}
+              image = {robotics_club}
             />
           ))}
         </div>

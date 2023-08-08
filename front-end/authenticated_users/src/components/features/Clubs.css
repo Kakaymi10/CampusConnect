@@ -67,6 +67,7 @@
 }
 .contact{
     color: #273b9f;
+    margin-top: 1em;
 }
 .club-title{
     color: #273b9f;
@@ -77,8 +78,10 @@
     background-color: white;
     color: #273b9f;
     cursor: pointer;
-    width: 100px;
-    height: 30px;
+    padding: 4px;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 50px;
     transition: 0.4s;
     border: 1px solid #273b9f;

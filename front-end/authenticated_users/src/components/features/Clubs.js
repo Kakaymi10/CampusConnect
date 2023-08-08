@@ -24,11 +24,11 @@ export function Clubs(props){
           <div className="dead">
             <div className="image-title">
               <h3 className="club-title">{props.title}</h3>
-              <img className="club_img" src={robotics_club} alt="club_img"/>
+              <img className="club_img" src={props.image} alt="club_img"/>
             </div>
             
             <div>
-                <h3>Club's Mission</h3>
+                <h3>{props.desc_title}</h3>
               <div className="content">
                 <p className={`truncate ${isTruncated ? "truncated" : ""}`}>
                   {props.description.slice(0, isTruncated ? maxLength : undefined)}
@@ -40,14 +40,16 @@ export function Clubs(props){
                 )}
             </div>
 
-                <button className="join-button">Join Club</button>
+                <a href={props.link} className="join-button" target="_blank" rel="noopener noreferrer">
+                  {props.join}
+                </a>
                 <div>
-                  <h4 className="contact">Contacts</h4>
-                  <a href={`mailto:${props.email}`}>
+                  <h4 className="contact">{props.contact}</h4>
+                  <a href={`mailto:${props.email}`} id={props.id}>
                     <FaEnvelope className="mail-icon"/>
                   </a>
-                  <a href={props.intagram}>
-                    <FaInstagram className="insta-icon"/>
+                  <a href={props.intagram} target="_blank" rel="noopener noreferrer" id={props.id}>
+                    <FaInstagram className="insta-icon" />
                   </a>
 
                   
@@ -66,7 +68,9 @@ export function Clubs(props){
               <p>{props.description}</p>
                 <div className="modal_buttons">
                   <button className="join-button" onClick={closeModal}>Close</button>
-                  <button className="join-button">Join Club</button>
+                  <a href={props.link} className="join-button" target="_blank" rel="noopener noreferrer">
+                  {props.join}
+                  </a>
                 </div>
             </div>
               
