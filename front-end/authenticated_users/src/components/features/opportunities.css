@@ -1,6 +1,6 @@
 .oppo_main{
     padding-top: 7em;
-    
+    position: relative;
 }
 
 .share_block{
@@ -25,9 +25,12 @@
 
 }
 .share-head{
+    position: fixed;
+    top: 11vh;
+    z-index: 99;
     display: flex;
     justify-content: space-around;
-    width: 90vw;
+    width: 100vw;
     align-items: center;
     text-align: center;
     margin: 0 auto;
@@ -38,4 +41,7 @@
 }
 #none{
     display: none;
+}
+.opp_content{
+    padding-top: 24vh;
 }

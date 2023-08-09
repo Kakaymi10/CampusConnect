@@ -8,10 +8,11 @@ import './../authentic/login.css'
 import { FaPlus } from 'react-icons/fa'
 import OpportunitiesContent from './opportunityContent';
 
+
 const FormComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);  
   const [formData, setFormData] = useState({
-    image: 'https://thumbs.dreamstime.com/z/internship-learnin…er-preparation-concept-working-85688117.jpg?w=992', // Default image URL
+    image: 'https://thumbs.dreamstime.com/z/internship-learnin…er-preparation-concept-working-85688117.jpg?w=992',
     title: '',
     deadline: '',
     description: '',
@@ -23,30 +24,43 @@ const FormComponent = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const db = getDatabase(app);
-    const dbRef = ref(db, '/opportunities'); // Replace with your actual path
-    push(dbRef, formData, (error) => {
-      if (error) {
-        console.error('Error posting data:', error);
-      } else {
-        console.log('Data posted to Firebase Realtime Database.');
-      }
-    });
+    const dbRef = ref(db, '/opportunities');
+    
+    try {
+      await push(dbRef, formData);
+      console.log('Data posted to Firebase Realtime Database.');
+      clearFormData();
+      closeModal();
+    } catch (error) {
+      console.error('Error posting data:', error);
+    }
   };
-
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
   const openModal = () => {
     setIsModalOpen(true);
   };
+
+  const clearFormData = () => {
+    setFormData({
+      ...formData,
+      title: '',
+      deadline: '',
+      description: '',
+      link: ''
+    });
+  };
+
   return (
-    <div className='oppo_main'> 
+    <div className='oppo_mainn'> 
       <div className='share-head'>
-        <h4 >Opportunities Hub</h4>
+        <h4>Opportunities Hub</h4>
         <button className='share-opp' onClick={openModal}><FaPlus />Post</button>
       </div>
       <Modal
@@ -55,9 +69,9 @@ const FormComponent = () => {
         contentLabel="Truncated Content Modal"
         className="custom-modal" 
       >
-      <div className='center share_block'>
-      <h1>Share with Us</h1>
-      <form onSubmit={handleSubmit}>
+        <div className='center share_block'>
+          <h1>Share with Us</h1>
+        <form onSubmit={handleSubmit}>
         <div className="txt_field">
           <input type="text" name="image" value={formData.image} onChange={handleInputChange} required/>
           <span></span>
@@ -84,9 +98,9 @@ const FormComponent = () => {
           <label>Link</label>
         </div>
     
-        <input type="submit" value='submit' />
+        <input type="submit" value='submit'/>
       </form>
-      </div>
+        </div>
       </Modal>
       <OpportunitiesContent />
     </div>

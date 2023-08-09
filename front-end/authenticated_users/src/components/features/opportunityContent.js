@@ -21,7 +21,7 @@ function OpportunitiesContent(){
 
 
     return(
-        <div>
+        <div className="opp_content">
             {opportunities.map(opportunity => (
                 <Clubs 
                     key = {opportunity.id}
