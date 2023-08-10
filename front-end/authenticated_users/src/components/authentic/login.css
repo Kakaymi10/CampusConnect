@@ -113,7 +113,11 @@ input[type="submit"]:hover {
   text-decoration: underline;
 }
 @media (max-width: 700px){
+  .login{
+    display: block;
+  }
   .center{
     width: 95%;
   }
+  
 }
