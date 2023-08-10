@@ -26,7 +26,7 @@ const Navbar = () => {
         <a href="#Team" onClick={handleLinkClick}>Team members</a>
   
       </div>
-      <button className="try_out">Login/Sign Up</button>
+      <button className="try_out"><a className="link_to_app" href="https://campusconnect-kakaymi10.vercel.app/">Login/Sign Up</a></button>
       <div
         className={`nav-toggle ${isOpen && "open"}`}
         onClick={() => setIsOpen(!isOpen)}

@@ -14,7 +14,7 @@ export default function About(){
                    Continuous improvements will be made during implementation.
             </p>
             <div className="btn">
-                <button className="try_out btn_abt">Login/Sign Up</button>
+                <button className="try_out btn_abt"><a href="https://campusconnect-kakaymi10.vercel.app/">Login/Sign Up</a></button>
             </div>
         </div>
     )

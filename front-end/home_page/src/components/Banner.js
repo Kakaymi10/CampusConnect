@@ -13,7 +13,7 @@ export default function Banner(){
                 <h2>Enhancing Engagement, Elevating Campus Life!</h2>
 
                 <div className="btn">
-                    <button className="try_out btn_bnr">Login/Sign Up</button>
+                    <button className="try_out btn_bnr"><a className="link_to_app" href="https://campusconnect-kakaymi10.vercel.app/">Login/Sign Up</a></button>
                 </div>
             </div>
             <div className="ban2">

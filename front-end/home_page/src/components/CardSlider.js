@@ -3,7 +3,6 @@ import './CardSlider.css'; // Import your custom CSS styles here
 import img1 from './../assets/Alu_event.png'
 import img2 from './../assets/alu-student.jpg'
 import img3 from './../assets/alustudents.jpg'
-
 const Services = () => {
   return (
     <div className="services-container" id='CardSlider'>
