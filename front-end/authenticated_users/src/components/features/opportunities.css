@@ -43,7 +43,7 @@
     display: none;
 }
 .opp_content{
-    padding-top: 24vh;
+    padding-top: 6vh;
 }
 .share-with-us-header{
     display: flex;
@@ -72,4 +72,22 @@
     border-radius: 15px;
     cursor: pointer;
     transition: 0.4s;
+}
+.filters{
+    text-align: center;
+    border: #5265c4 1px solid;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 5vh;
+    padding: 1em;
+    background-color: #5265c4;
+    color: white;
+    border-radius: 10px;
+}
+#filterSelect{
+    border: none;
+    color: #5265c4;
+    padding: 0.3em;
+    border-radius: 5px;
+    cursor: pointer;
 }

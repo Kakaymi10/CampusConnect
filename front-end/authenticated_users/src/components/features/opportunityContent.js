@@ -33,7 +33,7 @@ const formatTimeAgo = (timestamp) => {
 
 
 
-function OpportunitiesContent(){
+function OpportunitiesContent(props){
     const [opportunities, setOpportunities] = useState([]);
 
     useEffect(() => {
@@ -49,23 +49,82 @@ function OpportunitiesContent(){
         });
         
       }, []);
-    return(
-        <div className="opp_content">
-            {opportunities.map(opportunity => (
+    console.log(opportunities)
+    return (
+      <div>
+        {props.all ? (
+          <div className="opp_content">
+            {opportunities
+              .map(opportunity => (
                 <Clubs 
-                    key = {opportunity.id}
-                    desc_title = 'Description'
-                    title={opportunity.title}
-                    description = {opportunity.description}
-                    contact = {opportunity.deadline}
-                    join = 'Apply'
-                    image = {opportunity.image}
-                    id = 'none'
-                    link = {opportunity.link}
-                    posted = {formatTimeAgo(opportunity.timestamp)}
+                  key={opportunity.id}
+                  desc_title="Description"
+                  title={opportunity.title}
+                  description={opportunity.description}
+                  contact={opportunity.deadline}
+                  join="Apply"
+                  location={opportunity.location || ''}
+                  image={opportunity.image}
+                  id="none"
+                  link={opportunity.link}
+                  posted={formatTimeAgo(opportunity.timestamp)}
                 />
-            )).reverse()}
-        </div>
-    )
+              ))
+              .reverse()}
+          </div>
+        ) : props.event ? (
+          <div className="opp_content">
+            {opportunities.map(opportunity => (
+              opportunity.location ? (
+                <Clubs 
+                  key={opportunity.id}
+                  desc_title="Description"
+                  title={opportunity.title}
+                  description={opportunity.description}
+                  contact={opportunity.deadline}
+                  join="Apply"
+                  image={opportunity.image}
+                  location={opportunity.location}
+                  id="none"
+                  link={opportunity.link}
+                  posted={formatTimeAgo(opportunity.timestamp)}
+                />
+              ) : (
+                <div>
+                  <p>No Event</p>
+                </div>
+              )
+            ))}
+          </div>
+        ) : (
+          <div className="opp_content">
+            {opportunities
+              .filter(opportunity => !opportunity.location)
+              .map(opportunity => (
+                <Clubs 
+                  key={opportunity.id}
+                  desc_title="Description"
+                  title={opportunity.title}
+                  description={opportunity.description}
+                  contact={opportunity.deadline}
+                  join="Apply"
+                  image={opportunity.image}
+                  id="none"
+                  link={opportunity.link}
+                  posted={formatTimeAgo(opportunity.timestamp)}
+                />
+              ))
+              .reverse()
+            }
+            {opportunities.some(opportunity => opportunity.location) && (
+              <div>
+                <p>No Job or internship</p>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+    
 }
 export default OpportunitiesContent

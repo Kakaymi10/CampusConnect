@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Clubs } from "../Clubs";
 import robotics_club from './../assets/robotics_club.jpg'
+import { app } from '../../authentic/config';
+import { getDatabase, ref, onValue } from 'firebase/database';
 function Clubsfilled() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://127.0.0.1:8000/api/clubs/?format=json');
-        const jsonData = await response.json();
-        setData(jsonData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+    const database = getDatabase(app);
+    const dbRef = ref(database, 'clubs'); // Use the database instance
 
-    fetchData();
+    onValue(dbRef, snapshot => {
+        const data = snapshot.val();
+        if (data) {
+            const opportunitiesList = Object.values(data);
+            setData(opportunitiesList);
+        }
+    });
+    
   }, []);
 
   return (

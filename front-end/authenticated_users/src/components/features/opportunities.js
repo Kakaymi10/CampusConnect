@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { app } from '../authentic/config';
-import { getDatabase, ref, push } from 'firebase/database';
+import { getDatabase, ref, push, set } from 'firebase/database';
 import Modal from "react-modal";
 import { FaPlus } from 'react-icons/fa';
 import OpportunitiesContent from './opportunityContent';
@@ -10,6 +10,9 @@ import './../authentic/login.css';
 const FormComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [share, setShare] = useState(true);
+  const [selectedFilter, setSelectedFilter] = useState('');
+  const [event, setEvent] = useState(false)
+  const [all, setAll] = useState(false)
 
   const initialFormData = {
     image: 'https://thumbs.dreamstime.com/z/internship-learnin…er-preparation-concept-working-85688117.jpg?w=992',
@@ -74,12 +77,30 @@ const FormComponent = () => {
     setFormEvent(initialFormEvent);
   };
 
+  const handleFilterChange = (event) => {
+    setSelectedFilter(event.target.value);
+  };
+
+  useEffect(() => {
+    if (selectedFilter === 'All'){
+      setAll(true)
+    } else if (selectedFilter === 'Event'){
+      setEvent(true)
+      setAll(false)
+
+    } else if (selectedFilter === 'Jobs opp'){
+      setEvent(false)
+      setAll(false)
+    }
+
+  }, [selectedFilter])
   return (
     <div className='oppo_main'> 
       <div className='share-head'>
         <h4>Opportunities Hub</h4>
         <button className='share-opp' onClick={openModal}><FaPlus />Post</button>
       </div>
+      
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -158,7 +179,18 @@ const FormComponent = () => {
           )}
         </div>
       </Modal>
-      <OpportunitiesContent />
+      <div className='filters'>
+      <label htmlFor="filterSelect">Filter by: </label>
+      <select id="filterSelect" value={selectedFilter} onChange={handleFilterChange}>
+        <option value="All">All</option>
+        <option value="Event">Event</option>
+        <option value="Jobs opp">Jobs opp</option>
+
+      </select>
+      </div>
+      <OpportunitiesContent 
+        all = {all}
+        event = {event}/>
     </div>
   );
 };

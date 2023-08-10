@@ -38,11 +38,12 @@ export function Clubs(props){
                   View More
                 </button>
                 )}
-            </div>
+              </div>
                 
                 <a href={props.link} className="join-button" target="_blank" rel="noopener noreferrer">
                   {props.join}
                 </a>
+                <p>{props.location}</p>
                 <div>
                   <h4 className="contact">{props.contact}</h4>
                   <a href={`mailto:${props.email}`} id={props.id}>
