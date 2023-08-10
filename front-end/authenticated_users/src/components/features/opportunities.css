@@ -27,7 +27,7 @@
 .share-head{
     position: fixed;
     top: 11vh;
-    z-index: 99;
+  
     display: flex;
     justify-content: space-around;
     width: 100vw;
@@ -44,4 +44,32 @@
 }
 .opp_content{
     padding-top: 24vh;
+}
+.share-with-us-header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-top: 1em;
+}
+.share-event-focus{
+    background-color: white;
+    border: #5265c4 1px solid;
+    width: 40%;
+    height: 5vh;
+    color: #5265c4;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.share-internship{
+    background-color: #5265c4;
+    color: white;
+    border: #5265c4 1px solid;
+    width: 40%;
+    height: 5vh;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.4s;
 }

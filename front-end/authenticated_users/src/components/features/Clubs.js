@@ -39,7 +39,7 @@ export function Clubs(props){
                 </button>
                 )}
             </div>
-
+                
                 <a href={props.link} className="join-button" target="_blank" rel="noopener noreferrer">
                   {props.join}
                 </a>
@@ -51,10 +51,12 @@ export function Clubs(props){
                   <a href={props.intagram} target="_blank" rel="noopener noreferrer" id={props.id}>
                     <FaInstagram className="insta-icon" />
                   </a>
+      
 
                   
                 </div>
-
+                
+                <p className="date-posted">{props.posted}</p>
             </div>
           </div>
           <Modal
@@ -64,7 +66,10 @@ export function Clubs(props){
             className="custom-modal" 
           >
             <div>
-              <h3 className="club-title">{props.title}</h3>
+              <div className="modal-title">
+                <h3 className="club-title">{props.title}</h3>
+                <p className="date-posted">{props.posted}</p>
+              </div>
               <p>{props.description}</p>
                 <div className="modal_buttons">
                   <button className="join-button" onClick={closeModal}>Close</button>

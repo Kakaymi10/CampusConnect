@@ -1,36 +1,53 @@
 import React, { useState } from 'react';
-import 'firebase/database';
 import { app } from '../authentic/config';
 import { getDatabase, ref, push } from 'firebase/database';
 import Modal from "react-modal";
-import "./opportunities.css"
-import './../authentic/login.css'
-import { FaPlus } from 'react-icons/fa'
+import { FaPlus } from 'react-icons/fa';
 import OpportunitiesContent from './opportunityContent';
-
+import "./opportunities.css";
+import './../authentic/login.css';
 
 const FormComponent = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);  
-  const [formData, setFormData] = useState({
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [share, setShare] = useState(true);
+
+  const initialFormData = {
     image: 'https://thumbs.dreamstime.com/z/internship-learnin…er-preparation-concept-working-85688117.jpg?w=992',
     title: '',
     deadline: '',
     description: '',
-    link: ''
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    link: '',
+    timestamp: new Date().toISOString()
   };
 
-  const handleSubmit = async (event) => {
+  const [formData, setFormData] = useState(initialFormData);
+
+  const initialFormEvent = {
+    image: 'https://img.freepik.com/premium-vector/logo-vector…ncept-minimalism-technology_790567-360.jpg?w=1060',
+    title: '',
+    deadline: '',
+    description: '',
+    location: '',
+    link: '',
+    timestamp: new Date().toISOString()
+  };
+
+  const [formEvent, setFormEvent] = useState(initialFormEvent);
+
+  const handleInputChange = (event, isEventForm) => {
+    const { name, value } = event.target;
+    const formToUpdate = isEventForm ? formEvent : formData;
+    const updatedForm = { ...formToUpdate, [name]: value };
+    isEventForm ? setFormEvent(updatedForm) : setFormData(updatedForm);
+  };
+
+  const handleSubmit = async (event, formValues) => {
     event.preventDefault();
     const db = getDatabase(app);
     const dbRef = ref(db, '/opportunities');
-    
+
     try {
-      await push(dbRef, formData);
+      await push(dbRef, formValues);
       console.log('Data posted to Firebase Realtime Database.');
       clearFormData();
       closeModal();
@@ -47,18 +64,18 @@ const FormComponent = () => {
     setIsModalOpen(true);
   };
 
+  const handlShare = () => {
+    setShare(!share);
+    console.log(share);
+  };
+
   const clearFormData = () => {
-    setFormData({
-      ...formData,
-      title: '',
-      deadline: '',
-      description: '',
-      link: ''
-    });
+    setFormData(initialFormData);
+    setFormEvent(initialFormEvent);
   };
 
   return (
-    <div className='oppo_mainn'> 
+    <div className='oppo_main'> 
       <div className='share-head'>
         <h4>Opportunities Hub</h4>
         <button className='share-opp' onClick={openModal}><FaPlus />Post</button>
@@ -70,36 +87,75 @@ const FormComponent = () => {
         className="custom-modal" 
       >
         <div className='center share_block'>
-          <h1>Share with Us</h1>
-        <form onSubmit={handleSubmit}>
-        <div className="txt_field">
-          <input type="text" name="image" value={formData.image} onChange={handleInputChange} required/>
-          <span></span>
-          <label>Image URL</label>
-        </div>
-        <div className="txt_field">
-          <input type="text" name="title" value={formData.title} onChange={handleInputChange} required/>
-          <span></span>
-          <label>Title</label>
-        </div>
-        <div className="txt_field">
-          <input type="text" name="deadline" value={formData.deadline} onChange={handleInputChange} required/>
-          <span></span>
-          <label>Deadline</label>
-        </div>
-        <div className="txt_field">
-          <input name="description" value={formData.description} onChange={handleInputChange} required/>
-          <span></span>
-          <label>Description</label>
-        </div>
-        <div className="txt_field">
-          <input type="text" name="link" value={formData.link} onChange={handleInputChange} required />
-          <span></span>
-          <label>Link</label>
-        </div>
-    
-        <input type="submit" value='submit'/>
-      </form>
+          <div className='share-with-us-header'>
+            <button className={share ? 'share-internship': 'share-event-focus'} onClick={handlShare}>Share Internship</button>
+            <button className={share ? 'share-event-focus': 'share-internship'} onClick={handlShare}>Share Event</button>
+          </div>
+          <h1></h1>
+          {share ? (
+            <form onSubmit={(e) => handleSubmit(e, formData)}>
+              <div className="txt_field">
+                <input type="text" name="image" value={formData.image} onChange={(e) => handleInputChange(e, false)} required disabled/>
+                <span></span>
+                <label>Image URL</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="title" value={formData.title} onChange={(e) => handleInputChange(e, false)} required/>
+                <span></span>
+                <label>Title</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="deadline" value={formData.deadline} onChange={(e) => handleInputChange(e, false)} required/>
+                <span></span>
+                <label>Deadline</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="description" value={formData.description} onChange={(e) => handleInputChange(e, false)} required/>
+                <span></span>
+                <label>Description</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="link" value={formData.link} onChange={(e) => handleInputChange(e, false)} required />
+                <span></span>
+                <label>Link</label>
+              </div>
+              <input type="submit" value='Submit'/>
+            </form>
+          ) : (
+            <form onSubmit={(e) => handleSubmit(e, formEvent)}>
+              <div className="txt_field">
+                <input type="text" name="image" value={formEvent.image} onChange={(e) => handleInputChange(e, true)} required disabled/>
+                <span></span>
+                <label>Image URL</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="title" value={formEvent.title} onChange={(e) => handleInputChange(e, true)} required/>
+                <span></span>
+                <label>Title</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="deadline" value={formEvent.deadline} onChange={(e) => handleInputChange(e, true)} required/>
+                <span></span>
+                <label>Deadline</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="description" value={formEvent.description} onChange={(e) => handleInputChange(e, true)} required/>
+                <span></span>
+                <label>Description</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="location" value={formEvent.location} onChange={(e) => handleInputChange(e, true)} required/>
+                <span></span>
+                <label>Location</label>
+              </div>
+              <div className="txt_field">
+                <input type="text" name="link" value={formEvent.link} onChange={(e) => handleInputChange(e, true)} required />
+                <span></span>
+                <label>Link</label>
+              </div>
+              <input type="submit" value='Submit'/>
+            </form>
+          )}
         </div>
       </Modal>
       <OpportunitiesContent />
