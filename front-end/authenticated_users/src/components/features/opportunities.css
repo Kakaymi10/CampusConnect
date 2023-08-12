@@ -91,3 +91,17 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.spinnerOpp{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  }
+.shareSpinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 5em;
+
+}

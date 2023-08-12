@@ -8,3 +8,9 @@
 .clubs-block{
   padding-top: 7em;
 }
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

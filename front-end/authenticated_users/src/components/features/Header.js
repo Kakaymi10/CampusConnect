@@ -48,11 +48,11 @@ function Header(props) {
           <span className="nav-logo">Campus<span className="connect">Connect</span></span>
           <div className={`nav-items ${isOpen && "open"}`}>
             <Link to="/" className="a" onClick={handleLinkClick}>
-              Home
+              Campus Today
             </Link>
             
             <Link to="/Campustoday" className="a" onClick={handleLinkClick}>
-              Campus today
+              Campus Updates
             </Link>
             <Link to="/Clubs" className="a" onClick={handleLinkClick}>
               Clubs

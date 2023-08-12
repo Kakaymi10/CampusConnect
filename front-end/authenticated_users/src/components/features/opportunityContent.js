@@ -3,7 +3,7 @@ import { Clubs } from "./Clubs";
 import { app } from "../authentic/config";
 import { getDatabase, ref, onValue } from 'firebase/database';
 import "./opportunities.css"
-
+import ClockLoader from "react-spinners/HashLoader";
 
 
 // Function to format timestamp to "time ago" format
@@ -49,9 +49,16 @@ function OpportunitiesContent(props){
         });
         
       }, []);
-    console.log(opportunities)
     return (
       <div>
+        {opportunities.length === 0 && <div className='spinnerOpp'>
+          <ClockLoader 
+        color="#273b9f" 
+        size={100}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      /></div>
+      }
         {props.all ? (
           <div className="opp_content">
             {opportunities

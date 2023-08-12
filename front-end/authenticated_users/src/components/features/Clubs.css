@@ -127,7 +127,16 @@
 .date-posted{
     font-size: 13px;
     color: #919191;
-}  
+}
+
+.spinner{
+    position: absolute;
+    margin: 0 auto;
+    left: 45%;
+    right: 45%;
+    top: 45%;
+    bottom: 45%;
+}
 @media (max-width: 700px){
     .dead{
         display: flex;

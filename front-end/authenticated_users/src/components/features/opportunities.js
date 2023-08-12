@@ -6,14 +6,16 @@ import { FaPlus } from 'react-icons/fa';
 import OpportunitiesContent from './opportunityContent';
 import "./opportunities.css";
 import './../authentic/login.css';
+import ClockLoader from "react-spinners/HashLoader";
+
 
 const FormComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [share, setShare] = useState(true);
-  const [selectedFilter, setSelectedFilter] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState('All');
   const [event, setEvent] = useState(false)
   const [all, setAll] = useState(false)
-
+  const [isLoading, setIsLoading] = useState(false);
   const initialFormData = {
     image: 'https://thumbs.dreamstime.com/z/internship-learnin…er-preparation-concept-working-85688117.jpg?w=992',
     title: '',
@@ -45,6 +47,8 @@ const FormComponent = () => {
   };
 
   const handleSubmit = async (event, formValues) => {
+    closeModal();
+    setIsLoading(true);
     event.preventDefault();
     const db = getDatabase(app);
     const dbRef = ref(db, '/opportunities');
@@ -53,10 +57,12 @@ const FormComponent = () => {
       await push(dbRef, formValues);
       console.log('Data posted to Firebase Realtime Database.');
       clearFormData();
-      closeModal();
     } catch (error) {
       console.error('Error posting data:', error);
     }
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   };
 
   const closeModal = () => {
@@ -69,7 +75,6 @@ const FormComponent = () => {
 
   const handlShare = () => {
     setShare(!share);
-    console.log(share);
   };
 
   const clearFormData = () => {
@@ -82,6 +87,7 @@ const FormComponent = () => {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     if (selectedFilter === 'All'){
       setAll(true)
     } else if (selectedFilter === 'Event'){
@@ -92,15 +98,17 @@ const FormComponent = () => {
       setEvent(false)
       setAll(false)
     }
-
+    setTimeout(() => {
+      setIsLoading(false); // Stop the loading spinner after the operation is done
+    }, 2000);
   }, [selectedFilter])
   return (
-    <div className='oppo_main'> 
+    <div className='oppo_main'>
+      <div> 
       <div className='share-head'>
         <h4>Opportunities Hub</h4>
         <button className='share-opp' onClick={openModal}><FaPlus />Post</button>
       </div>
-      
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -188,9 +196,16 @@ const FormComponent = () => {
 
       </select>
       </div>
-      <OpportunitiesContent 
+      {isLoading && 
+        (<div className='shareSpinner'>
+          <ClockLoader color='#273b9f' size={100} aria-label='Loading Spinner' data-testid='loader' />
+          </div>
+      )}
+      {!isLoading && (<OpportunitiesContent 
         all = {all}
-        event = {event}/>
+        event = {event}/>)}
+      </div>
+      
     </div>
   );
 };

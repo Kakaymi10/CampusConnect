@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, CSSProperties } from 'react';
 import { Clubs } from "../Clubs";
 import robotics_club from './../assets/robotics_club.jpg'
 import { app } from '../../authentic/config';
 import { getDatabase, ref, onValue } from 'firebase/database';
+import ClockLoader from "react-spinners/HashLoader";
+import './../Clubs.css'
+
 function Clubsfilled() {
   const [data, setData] = useState([]);
 
@@ -23,7 +26,13 @@ function Clubsfilled() {
   return (
     <div className='clubs-block'>
       {/* Rendered while fetching data */}
-      {data.length === 0 && <p>Loading...</p>}
+      {data.length === 0 && <div className='spinner'><ClockLoader 
+        color="#273b9f" 
+        size={100}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      /></div>
+}
 
       {/* Render clubs when data is available */}
       {data.length > 0 && (
