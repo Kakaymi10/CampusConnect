@@ -7,9 +7,9 @@ export default function Campustoday(){
     return(
         <div className="campus">
             <Campus />
+            {/* <Campus />
             <Campus />
-            <Campus />
-            <Campus />
+            <Campus /> */}
         </div>
     )
 }
