@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaUserCircle } from 'react-icons/fa';
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes, useMatch } from "react-router-dom";
 
 import Home from "./Home";
 
@@ -12,7 +12,7 @@ import "./../../App.css";
 import Campustoday from "./Campustoday";
 import Clubsfilled from "./clubsdata/clubsfilled";
 import FormComponent from "./opportunities";
-
+import Event from "./Event";
 
 ////Testing firebse
 
@@ -51,14 +51,14 @@ function Header(props) {
               Campus Today
             </Link>
             
-            <Link to="/Campustoday" className="a" onClick={handleLinkClick}>
-              Campus Updates
+            <Link to="/updateshub" className="a" onClick={handleLinkClick}>
+              Updates Hub
             </Link>
             <Link to="/Clubs" className="a" onClick={handleLinkClick}>
               Clubs
             </Link>
             <Link to="/opportunities" className="a" onClick={handleLinkClick}>
-              Share opportunities
+              OppHub
             </Link>
             
           </div>
@@ -101,6 +101,7 @@ function Header(props) {
           <Route path="/Campustoday" element={<Campustoday />} />
           <Route path="/Clubs" element={<Clubsfilled />} />
           <Route path="/opportunities" element={<FormComponent/>} />
+          <Route path="/updateshub" element={<Event/>} />
         </Routes>
       </div>
     </BrowserRouter>

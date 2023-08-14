@@ -23,6 +23,7 @@ export function Clubs(props){
           
           <div className="dead">
             <div className="image-title">
+              <h5 id={props.live} className="live">{props.islive}</h5>
               <h3 className="club-title">{props.title}</h3>
               <img className="club_img" src={props.image} alt="club_img"/>
             </div>

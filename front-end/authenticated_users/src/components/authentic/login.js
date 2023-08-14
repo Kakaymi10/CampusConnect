@@ -2,13 +2,15 @@ import React from "react";
 import "./login.css";
 import { auth, provider } from "./config";
 import { signInWithPopup, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+import google from './../features/assets/google-logo.png'
+import { FiHome } from "react-icons/fi";
 
 function Login(props){
     
     return(
         <div className="login">
               
-          
+        <a href="https://www.youtube.com/watch?v=wGCHeYpUbh4"><FiHome className="gohome" /></a>
 
 
         <div className="center">
@@ -25,11 +27,14 @@ function Login(props){
               <label>Password</label>
             </div>
             <div className="pass">{props.forgot}</div>
+            
             <input type="submit" value={props.submit} />
            <div className="signup_link">
-               {props.lab_not_member} <a href="#"  onClick={props.switch}>{props.not_member}</a>
+               {props.lab_not_member} <a href="#"  onClick={props.switch}>{props.not_member}</a> or
             </div>
+            <button className="google_signin" onClick={props.handleGoogleSignIn}><img className="google_logo" src={google} alt="google_logo"/>Sign in with Google</button>
           </form>
+         
         </div>
         </div> 
     )

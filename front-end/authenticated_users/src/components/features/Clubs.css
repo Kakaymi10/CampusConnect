@@ -11,6 +11,7 @@
     grid-template-columns: 1fr 1fr;
     border: #ccc 2px solid;
     padding-top: 1em;
+    padding-left: 1px;
     padding-bottom: 1em;
     gap: 0em;
     margin: 0;
@@ -28,6 +29,7 @@
     background-color: #f0f0f0;
 }
 .image-title{
+    padding-left: 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,7 +107,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: red;
+    color: rgb(156, 39, 39);
   }
   .truncate{
     color: #273b9f;
@@ -136,6 +138,43 @@
     right: 45%;
     top: 45%;
     bottom: 45%;
+}
+/* styles.css or your preferred CSS file */
+@keyframes colorChange {
+    0% {
+      background-color: red;
+      color: white;
+      padding: 3px;
+      border-radius: 5px;
+      border: red 1px solid;
+      width: 100px;
+    }
+    
+    100% {
+        background-color: white;
+        color: red;
+        padding: 3px;
+        border-radius: 5px;
+        border: red 1px solid;
+        width: 100px;
+    }
+  }
+#live{
+    animation: colorChange 1s linear infinite;
+}
+.live{
+    background-color: red;
+      color: white;
+      padding: 3px;
+      border-radius: 5px;
+      border: red 1px solid;
+      width: 100px;
+}
+.clubs-block{
+    padding-top: 10vh;
+}
+.clubs_header{
+    margin-bottom: 3em;
 }
 @media (max-width: 700px){
     .dead{

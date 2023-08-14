@@ -6,7 +6,7 @@ import { FaPlus } from 'react-icons/fa';
 import OpportunitiesContent from './opportunityContent';
 import "./opportunities.css";
 import './../authentic/login.css';
-import ClockLoader from "react-spinners/HashLoader";
+import ClockLoader from "react-spinners/RingLoader";
 
 
 const FormComponent = () => {
@@ -105,6 +105,8 @@ const FormComponent = () => {
   return (
     <div className='oppo_main'>
       <div> 
+      <h3 className="c_tody_title">Experience the convenience of seamlessly browsing through the latest campus updates </h3>     
+      <div className='opp_head'></div>
       <div className='share-head'>
         <h4>Opportunities Hub</h4>
         <button className='share-opp' onClick={openModal}><FaPlus />Post</button>

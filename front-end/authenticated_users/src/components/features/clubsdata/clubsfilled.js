@@ -3,7 +3,7 @@ import { Clubs } from "../Clubs";
 import robotics_club from './../assets/robotics_club.jpg'
 import { app } from '../../authentic/config';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import ClockLoader from "react-spinners/HashLoader";
+import ClockLoader from "react-spinners/RingLoader";
 import './../Clubs.css'
 
 function Clubsfilled() {
@@ -36,7 +36,9 @@ function Clubsfilled() {
 
       {/* Render clubs when data is available */}
       {data.length > 0 && (
-        <div>
+        <div clubs-block>
+          <h3 className="c_tody_title">Experience the convenience of seamlessly browsing through the latest campus updates </h3>     
+          <div className='opp_head clubs_header'></div>
           {data.map((item) => (
             <Clubs
              desc_title ="Club's Mission"
@@ -44,6 +46,7 @@ function Clubsfilled() {
               title={item.name}
               description={item.description}
               join = 'Join Club'
+              link = {item.join}
               contact = 'Contacts'
               email = {item.email}
               intagram = {item.instagram_link}

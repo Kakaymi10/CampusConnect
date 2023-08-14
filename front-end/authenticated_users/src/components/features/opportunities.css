@@ -79,7 +79,7 @@
     width: 200px;
     margin: 0 auto;
     margin-top: 5vh;
-    padding: 1em;
+    padding: 0.3em;
     background-color: #5265c4;
     color: white;
     border-radius: 10px;
@@ -87,7 +87,7 @@
 #filterSelect{
     border: none;
     color: #5265c4;
-    padding: 0.3em;
+    padding: 0.1em;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -104,4 +104,7 @@
     height: 100%;
     margin-top: 5em;
 
+}
+.opp_head{
+ border-bottom: red 3px solid;
 }

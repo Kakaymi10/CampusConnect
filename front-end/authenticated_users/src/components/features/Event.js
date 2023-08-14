@@ -1,65 +1,57 @@
-import React from "react";
+import TestComponent from "./Eventcontent";
 import "./Event.css"
-import Card from "./Card";
+import React, { useState, useEffect } from "react";
+import ClockLoader from "react-spinners/RingLoader";
+function Event(){
+  const [src, setSrc] = useState()
+  const [all, setAll] = useState()
+  const [selectedFilter, setSelectedFilter] = useState('All');
+  const [isLoading, setIsLoading] = useState(false);
 
-import { initializeApp } from 'firebase/app';
-import { getDatabase } from 'firebase/database';
-import { useState, useEffect } from 'react';
-import { ref, onValue } from 'firebase/database';
 
-const firebaseConfig = {
-  // Your Firebase app configuration options
-  apiKey: "AIzaSyDbloeJNjdhU840mPSdQiYaIJkKWCMKOI4",
-  authDomain: "alu-hackathon.firebaseapp.com",
-  databaseURL: "https://alu-hackathon-default-rtdb.firebaseio.com",
-  projectId: "alu-hackathon",
-  storageBucket: "alu-hackathon.appspot.com",
-  messagingSenderId: "903657003269",
-  appId: "1:903657003269:web:cdf7eb75098b7aea6ebf6c",
-  measurementId: "G-M355NDKVJ1"
-};
+  const handleFilterChange = (event) => {
+    setSelectedFilter(event.target.value);
+  };
 
-// Initialize Firebase app
-const app = initializeApp(firebaseConfig);
+  useEffect(() => {
+    setIsLoading(true);
+    if (selectedFilter === 'All'){
+      setAll(true)
+    } else if (selectedFilter === 'Event'){
+      setSrc(true)
+      setAll(false)
 
-// Get a reference to the Firebase Realtime Database
-function TestComponent() {
-    const [data, setData] = useState(null);
-  
-    useEffect(() => {
-      // Get a reference to the Firebase Realtime Database
-      const db = getDatabase();
-  
-      // Define a reference to the location of your data
-      const myDataRef = ref(db, 'events');
-  
-      // Listen for changes to the data and update the state
-      onValue(myDataRef, (snapshot) => {
-        const data = snapshot.val();
-        setData(data);
-      });
-    }, []);
-    const mydatas = data && Array.isArray(data) ? data.slice(1) : [];
-    
-    const cards_map = mydatas.map(items => {
-        return(
+    } else if (selectedFilter === 'Jobs opp'){
+      setSrc(false)
+      setAll(false)
+    }
+    setTimeout(() => {
+      setIsLoading(false); // Stop the loading spinner after the operation is done
+    }, 2000);
+  }, [selectedFilter])
+  return(
+    <div className="main-Events">
+      <h3 className="c_tody_title">Experience the convenience of seamlessly browsing through the latest campus updates </h3>     
+      <div className='opp_head clubs_header'></div>
+        <div className='filters eventfilter'>
+            <label htmlFor="filterSelect">Filter by: </label>
+            <select id="filterSelect"  value={selectedFilter} onChange={handleFilterChange}>
+            <option value="All">All</option>
+            <option value="Event">SRC updates</option>
+            <option value="Jobs opp">ALU guests</option>
 
-          <Card 
-            key = {items.title}
-            {...items}
-          />
-        )
-      })
-    
-    
-    return (
-      <div className="main-Events">
-        
-        {cards_map}
-       
- 
-      </div>
-    );
-  }
-  
-  export default TestComponent;
+            </select>
+          </div> 
+
+          {isLoading && 
+        (<div className='shareSpinner'>
+          <ClockLoader color='#273b9f' size={100} aria-label='Loading Spinner' data-testid='loader' />
+          </div>
+      )}
+      {!isLoading && (<div className="updates_body"><TestComponent 
+        all = {all}
+        src = {src}/></div>)}
+    </div>
+  )
+}
+export default Event
