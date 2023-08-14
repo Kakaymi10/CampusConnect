@@ -11,8 +11,8 @@ const Services = () => {
         <div className="services">
           <img src={img1} alt="alu-students" />
           <div className="layer">
-            <h2>Real-Time Updates for Engaging Campus Life</h2>
-            <p>
+            <h2 className='card_title'>Real-Time Updates for Engaging Campus Life</h2>
+            <p className='card_descriptions'>
               Stay connected and informed with instant notifications about
               ongoing and upcoming events on campus. Never miss out on academic,
               cultural, or social activities with this user-friendly platform
@@ -23,10 +23,10 @@ const Services = () => {
         <div className="services">
           <img src={img2} alt="alu-students" />
           <div className="layer">
-            <h2>
+            <h2 className='card_title'>
               ALU Clubs Discovery: Join and Engage in Diverse Campus Communities
             </h2>
-            <p>
+            <p className='card_descriptions'>
               Explore a comprehensive list of diverse clubs at ALU, each with
               brief descriptions. Discover opportunities for personal and
               academic growth, social connections, and leadership development.
@@ -38,8 +38,8 @@ const Services = () => {
         <div className="services">
           <img src={img3} alt="alu-students" />
           <div className="layer">
-            <h2>Empowering Students to Share Extra Activities & Opportunities</h2>
-            <p>
+            <h2 className='card_title'>Empowering Students to Share Extra Activities & Opportunities</h2>
+            <p className='card_descriptions'>
               Campus Connect Hub offers ALU students an upload functionality to
               share information about exciting extra activities, events, and
               opportunities they discover. From internships and workshops to

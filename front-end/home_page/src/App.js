@@ -7,7 +7,7 @@ import CardSlider from './components/CardSlider';
 import Team from './components/Team';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import ContactForm from './components/Contact';
 
 function App() {
   useEffect(()=> {
@@ -28,6 +28,9 @@ function App() {
       </section>
       <section data-aos="fade-down">
       <Team/>
+      </section>
+      <section data-aos="fade-down">
+      <ContactForm/>
       </section>
 
 
