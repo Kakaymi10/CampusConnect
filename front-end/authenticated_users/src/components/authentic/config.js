@@ -21,7 +21,7 @@ const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: XXXXXXXXXXXXXXXXXX,
     databaseURL: XXXXXXXXXXXXXXXXXX,
-    projectId: XXX,
+    projectId: XXXXX,
     storageBucket: "alu-hackathon.appspot.com",
     messagingSenderId: "903657003269",
     appId: "1:903657003269:web:cdf7eb75098b7aea6ebf6c",
