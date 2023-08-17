@@ -25,7 +25,7 @@ const firebaseConfig = {
     storageBucket: "alu-hackathon.appspot.com",
     messagingSenderId: "903657003269",
     appId: "1:903657003269:web:cdf7eb75098b7aea6ebf6c",
-    measurementId: "G-M355NDKVJ1"
+    measurementId: "G-M355NDKVJ1"X
   };
 
 // Initialize Firebase
