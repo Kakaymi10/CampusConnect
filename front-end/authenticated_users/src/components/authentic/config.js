@@ -24,7 +24,7 @@ const firebaseConfig = {
     projectId: XXXXXXXXXXXXXXX,
     storageBucket: XXXXXXXXXXXXXXX,
     messagingSenderId: XXXXXXXXXXXXX,
-    appId: ,
+    appId: XXXXXXXXX,
     measurementId: "G-M355NDKVJ1"
   };
 
