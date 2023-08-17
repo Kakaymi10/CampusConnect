@@ -96,7 +96,7 @@ export default function Home() {
     <div className="banner">
       <h3 className="c_tody_title">Experience the convenience of seamlessly browsing through the latest campus updates </h3>     
       <div className="c_today_body">
-      <h3 className="today">Campus Today:</h3> 
+      <h3 className="today">Campus Live:</h3> 
         {liveFilteredData.length > 0 ? (data.filter(item => checkLiveStatus(item.start, item.end) && performComparison(locations, item.location))
           .map(item => (
             <Clubs

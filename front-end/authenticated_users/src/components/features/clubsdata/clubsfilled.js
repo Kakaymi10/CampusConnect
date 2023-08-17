@@ -5,7 +5,7 @@ import { app } from '../../authentic/config';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import ClockLoader from "react-spinners/RingLoader";
 import './../Clubs.css'
-
+import Images from '../assets/Assets';
 function Clubsfilled() {
   const [data, setData] = useState([]);
 
@@ -38,8 +38,9 @@ function Clubsfilled() {
       {data.length > 0 && (
         <div clubs-block>
           <h3 className="c_tody_title">Experience the convenience of seamlessly browsing through the latest campus updates </h3>     
-          <div className='opp_head clubs_header'></div>
+          <div className='opp_head' id='clubs_header'></div>
           {data.map((item) => (
+            <div>
             <Clubs
              desc_title ="Club's Mission"
               key={item.id}
@@ -50,8 +51,9 @@ function Clubsfilled() {
               contact = 'Contacts'
               email = {item.email}
               intagram = {item.instagram_link}
-              image = {robotics_club}
+              image = {Images[item.id]}
             />
+            </div>
           ))}
         </div>
       )}

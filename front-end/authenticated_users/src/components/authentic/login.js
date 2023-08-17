@@ -1,7 +1,5 @@
 import React from "react";
 import "./login.css";
-import { auth, provider } from "./config";
-import { signInWithPopup, signOut, createUserWithEmailAndPassword } from "firebase/auth";
 import google from './../features/assets/google-logo.png'
 import { FiHome } from "react-icons/fi";
 
