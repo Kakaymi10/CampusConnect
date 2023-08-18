@@ -19,13 +19,13 @@ import {getAuth, GoogleAuthProvider} from "firebase/auth"
 const firebaseConfig = {
     // Your Firebase app configuration options
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: "alu-hackathon.firebaseapp.com",
-    databaseURL: "https://alu-hackathon-default-rtdb.firebaseio.com",
-    projectId: "alu-hackathon",
-    storageBucket: "alu-hackathon.appspot.com",
-    messagingSenderId: "903657003269",
-    appId: "1:903657003269:web:cdf7eb75098b7aea6ebf6c",
-    measurementId: "G-M355NDKVJ1"X
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
   };
 
 // Initialize Firebase
